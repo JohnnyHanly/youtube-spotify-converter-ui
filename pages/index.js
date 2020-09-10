@@ -7,7 +7,13 @@ class Home extends React.Component {
     super(props);
     this.state = {};
   }
-
+  static async getInitialProps() {
+    const res = await fetch("https://api.github.com/repos/vercel/next.js");
+    const json = await res.json();
+    return {
+      stars: json.stargazers_count,
+    };
+  }
 
   render() {
     return (

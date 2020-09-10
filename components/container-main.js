@@ -1,5 +1,8 @@
 import React from "react";
+import config from "../config";
 import ComponentView from "./container-view";
+import { stringify } from "querystring";
+var Url = require("url-parse");
 
 class Main extends React.Component {
   constructor(props) {
@@ -9,21 +12,24 @@ class Main extends React.Component {
     };
   }
 
-  static async getInitialProps() {
-    const res = await fetch("https://api.github.com/repos/vercel/next.js");
-    const json = await res.json();
-    return {
-      stars: json.stargazers_count,
-    };
-  }
-
   async sendPlaylistId(playlistId) {}
+
   parsePlaylistUrl(playlistUrl) {
     console.log("Playlist to Parse", playlistUrl);
+    var url = Url(playlistUrl);
+    let { host, pathname } = url;
+    if (pathname) {
+      var path = pathname.split("/").filter((el) => el != "");
+      var [pathDest, playlistId] = path;
+      if (host === config.host && pathDest == config.playlistPath) {
+        console.log("Playlist to find:", playlistId);
+      }
+    }
   }
   handleKeyDown(e) {
+    console.log(this.props);
     var playlistId = this.state.playlistId;
-    if (e.key == "Enter" && this.state.playlistId) {
+    if (e.key == "Enter" && playlistId) {
       this.parsePlaylistUrl(playlistId);
     }
   }

@@ -32,7 +32,6 @@ var view = function () {
             A simple tool to export Spotify Playlists to Youtube Music
           </h3>
         </section>
-
         <Searchbar
           handleKeyDown={this.handleKeyDown.bind(this)}
           playlistId={this.state.playlistId}
