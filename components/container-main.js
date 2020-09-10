@@ -12,9 +12,16 @@ class Main extends React.Component {
     };
   }
 
-  async sendPlaylistId(playlistId) {}
+  async sendPlaylistId(playlistId) {
+    console.log("SEND PLAYLIST", playlistId);
+
+    const res = await fetch(`${config.proxyURL}/playlist/${playlistId}`);
+    const json = await res.json();
+    console.log(json);
+  }
 
   parsePlaylistUrl(playlistUrl) {
+    let validUrl = false;
     console.log("Playlist to Parse", playlistUrl);
     var url = Url(playlistUrl);
     let { host, pathname } = url;
@@ -22,7 +29,9 @@ class Main extends React.Component {
       var path = pathname.split("/").filter((el) => el != "");
       var [pathDest, playlistId] = path;
       if (host === config.host && pathDest == config.playlistPath) {
+        validUrl = true;
         console.log("Playlist to find:", playlistId);
+        this.sendPlaylistId(playlistId);
       }
     }
   }

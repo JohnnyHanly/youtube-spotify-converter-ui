@@ -3,6 +3,5 @@ export default function playlistHandler(req, res) {
     query: { id },
     method,
   } = req;
-
-  res.end(`PlaylistID: ${id}`)
+  res.json({ PlaylistID: id });
 }
