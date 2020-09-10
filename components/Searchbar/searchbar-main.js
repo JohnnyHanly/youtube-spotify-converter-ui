@@ -6,6 +6,7 @@ class Main extends React.Component{
         super(props);
         this.state = {};
       }
+      componentWillReceiveProps
 
       componentDidMount(){
           console.log(this.props)

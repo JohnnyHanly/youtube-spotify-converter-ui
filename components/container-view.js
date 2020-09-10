@@ -2,13 +2,16 @@ import Head from "next/head";
 import Link from "next/link";
 import Footer from "./Footer";
 import Searchbar from "./Searchbar";
+import Tracklist from "./Tracklist";
 import Navbar from "./Navbar";
+import Button from "@material-ui/core/Button";
+import Container from "@material-ui/core/Container";
 const name = "Your Name";
 export const siteTitle = "Next.js Sample Website";
 
 var view = function () {
   return (
-    <div>
+    <Container>
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta
@@ -32,15 +35,18 @@ var view = function () {
             A simple tool to export Spotify Playlists to Youtube Music
           </h3>
         </section>
+
         <Searchbar
           handleKeyDown={this.handleKeyDown.bind(this)}
           playlistId={this.state.playlistId}
           handlePlaylistInput={this.handlePlaylistInput.bind(this)}
+          invalidUrl={this.state.invalidUrl}
         />
+        <Tracklist />
       </div>
 
       <Footer />
-    </div>
+    </Container>
   );
 };
 

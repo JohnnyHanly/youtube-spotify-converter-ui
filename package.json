@@ -8,7 +8,10 @@
     "start": "next start"
   },
   "dependencies": {
+    "@material-ui/core": "^4.11.0",
+    "@material-ui/icons": "^4.9.1",
     "bulma": "^0.9.0",
+    "fontsource-roboto": "^3.0.3",
     "fs": "0.0.1-security",
     "gray-matter": "^4.0.2",
     "next": "9.5.3",

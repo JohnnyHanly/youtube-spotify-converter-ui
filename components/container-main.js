@@ -9,19 +9,21 @@ class Main extends React.Component {
     super(props);
     this.state = {
       playlistId: "",
+      trackList: [],
+      invalidUrl: false,
     };
   }
 
   async sendPlaylistId(playlistId) {
-    console.log("SEND PLAYLIST", playlistId);
-
     const res = await fetch(`${config.proxyURL}/playlist/${playlistId}`);
-    const json = await res.json();
-    console.log(json);
+    const trackList = await res.json();
+    this.setState({
+      trackList: trackList,
+    });
   }
 
   parsePlaylistUrl(playlistUrl) {
-    let validUrl = false;
+    let invalidUrl = true;
     console.log("Playlist to Parse", playlistUrl);
     var url = Url(playlistUrl);
     let { host, pathname } = url;
@@ -34,6 +36,10 @@ class Main extends React.Component {
         this.sendPlaylistId(playlistId);
       }
     }
+
+    this.setState({
+      invalidUrl: invalidUrl,
+    });
   }
   handleKeyDown(e) {
     console.log(this.props);
@@ -41,13 +47,23 @@ class Main extends React.Component {
     if (e.key == "Enter" && playlistId) {
       this.parsePlaylistUrl(playlistId);
     }
+    if (e.key == "Backspace") {
+      this.setState({
+        invalidUrl: false,
+      });
+    }
   }
 
   async handlePlaylistInput(e) {
-    console.log(e.target.value);
     this.setState({
       playlistId: e.target.value,
     });
+
+    if (e.target.value == "") {
+      this.setState({
+        invalidUrl: false,
+      });
+    }
   }
   render() {
     return ComponentView.bind(this)();
