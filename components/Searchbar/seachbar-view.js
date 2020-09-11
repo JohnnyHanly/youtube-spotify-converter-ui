@@ -17,7 +17,7 @@ var view = function () {
         label={
           !this.props.invalidUrl
             ? "Enter a Spotify playlist URL"
-            : "Must be a valid Spotify URL ie: https://open.spotify.com/playlist/37i9dQZF1DWY7IeIP1cdjF "
+            : "Must be a valid Spotify URL"
         }
         variant="outlined"
       />

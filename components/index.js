@@ -1,2 +1,2 @@
-import Component from "./container-main"
+import Component from "./layout-main"
 export default Component;

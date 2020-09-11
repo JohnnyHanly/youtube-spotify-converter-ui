@@ -1,5 +1,5 @@
 import Head from "next/head";
-import Container, { siteTitle } from "../components/container-main";
+import Layout, { siteTitle } from "../components/layout-main";
 import React, { Component } from "react";
 
 class Home extends React.Component {
@@ -17,7 +17,7 @@ class Home extends React.Component {
 
   render() {
     return (
-      <Container ></Container>
+      <Layout ></Layout>
     );
   }
 }

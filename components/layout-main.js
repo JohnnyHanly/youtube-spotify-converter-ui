@@ -1,6 +1,6 @@
 import React from "react";
 import config from "../config";
-import ComponentView from "./container-view";
+import ComponentView from "./layout-view";
 import { stringify } from "querystring";
 var Url = require("url-parse");
 

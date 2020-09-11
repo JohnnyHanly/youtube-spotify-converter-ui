@@ -6,12 +6,13 @@ import Tracklist from "./Tracklist";
 import Navbar from "./Navbar";
 import Button from "@material-ui/core/Button";
 import Container from "@material-ui/core/Container";
+import Box from "@material-ui/core/Box";
 const name = "Your Name";
 export const siteTitle = "Next.js Sample Website";
 
 var view = function () {
   return (
-    <Container>
+    <Box component="div">
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta
@@ -25,7 +26,7 @@ var view = function () {
       <header className="header">
         <Navbar />
       </header>
-      <div className="container">
+      <Container>
         <section className="section">
           <h1 class="title is-1">
             <span style={{ color: "#1db954" }}>Spotify</span>-
@@ -43,10 +44,10 @@ var view = function () {
           invalidUrl={this.state.invalidUrl}
         />
         <Tracklist />
-      </div>
+      </Container>
 
       <Footer />
-    </Container>
+    </Box>
   );
 };
 
