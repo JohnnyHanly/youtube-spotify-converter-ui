@@ -1,8 +1,8 @@
 import React from "react";
-
+import styles from "./footer.module.css"
 var view = function () {
   return (
-    <footer class="footer" style={{ backgroundColor: "#e2e2e2" }}>
+    <footer className={styles.footer}>
       <div class="content has-text-centered">
         <p>
           <strong>Bulma</strong> by{" "}

@@ -31,7 +31,7 @@ class Main extends React.Component {
       var path = pathname.split("/").filter((el) => el != "");
       var [pathDest, playlistId] = path;
       if (host === config.host && pathDest == config.playlistPath) {
-        validUrl = true;
+        invalidUrl = false;
         console.log("Playlist to find:", playlistId);
         this.sendPlaylistId(playlistId);
       }

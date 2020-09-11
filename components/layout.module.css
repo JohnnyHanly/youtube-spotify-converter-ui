@@ -1,7 +1,9 @@
-.container {
-    max-width: 36rem;
-    padding: 0 1rem;
-    margin: 3rem auto 6rem;
+.contentContainer {
+    padding: 0rem 1.5rem 10rem;
+  }
+  .container{
+    position: relative;
+    min-height: 100vh;  
   }
   
   .header {
@@ -23,3 +25,7 @@
   .backToHome {
     margin: 3rem 0 0;
   }
+  .titleContainer{
+    padding: 2.5rem 1.5rem 1.5rem;
+  }
+  

@@ -1,10 +1,10 @@
 import React from "react";
 import styles from "./searchbar.module.css";
-import { TextField, Typography } from "@material-ui/core";
+import { TextField, Typography, Box } from "@material-ui/core";
 
 var view = function () {
   return (
-    <section className="section">
+    <Box component="div" className={styles.searchBarContainer}>
       <TextField
         error={this.props.invalidUrl}
         className={styles.searchBar}
@@ -21,7 +21,7 @@ var view = function () {
         }
         variant="outlined"
       />
-    </section>
+    </Box>
   );
 };
 

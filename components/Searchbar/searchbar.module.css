@@ -1,3 +1,8 @@
 .searchBar{
     width:100%;
 }
+
+.searchBarContainer{
+        padding: 1rem 1.5rem 2rem
+      
+}
