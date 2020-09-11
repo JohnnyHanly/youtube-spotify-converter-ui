@@ -12,17 +12,17 @@ var view = function () {
   return (
     <Box className="div">
       <Typography variant="h4">
-        Get started by entering a playlist URL bellow
+        Get started by entering a playlist URL below
       </Typography>
 
       <List className={styles.trackList} dense={false}>
-        <Grid container direction="row" justify="start" alignItems="center">
+        <Grid container direction="row" justify="flex-start" alignItems="center">
           {trackList.map((x) => (
-            <Grid item sm={3}>
-              <TracklistItem track={x} />
+            <Grid key={x.track.id} item sm={3}>
+              <TracklistItem key={x.track.id}track={x} />
             </Grid>
           ))}
-        </Grid>
+        </Grid> 
       </List>
     </Box>
   );
