@@ -45,7 +45,7 @@ var view = function () {
             handlePlaylistInput={this.handlePlaylistInput.bind(this)}
             invalidUrl={this.state.invalidUrl}
           />
-          <Tracklist />
+          <Tracklist trackList={this.state.trackList} />
         </Box>
         <Footer />
 

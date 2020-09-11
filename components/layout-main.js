@@ -17,6 +17,7 @@ class Main extends React.Component {
   async sendPlaylistId(playlistId) {
     const res = await fetch(`${config.proxyURL}/playlist/${playlistId}`);
     const trackList = await res.json();
+    console.log(trackList);
     this.setState({
       trackList: trackList,
     });

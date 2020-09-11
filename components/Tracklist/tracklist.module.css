@@ -1,5 +1,5 @@
 .trackList{
     position: relative;
     overflow: auto;
-    width: inherit;
+    width: '100%';
 }

@@ -6,12 +6,11 @@ class Main extends React.Component {
     super(props);
     this.state = {
       trackList: [],
+      trackListExists: false,
     };
   }
 
-  componentDidMount() {
-    console.log(this.state);
-  }
+ 
 
   render() {
     return ComponentView.bind(this)();
