@@ -19,6 +19,7 @@ class Main extends React.Component {
         images: {},
       },
       searchComplete: false,
+      searchStarted: false,
     };
   }
 
@@ -47,6 +48,9 @@ class Main extends React.Component {
       var path = pathname.split("/").filter((el) => el != "");
       var [pathDest, playlistId] = path;
       if (host === config.host && pathDest == config.playlistPath) {
+        this.setState({
+          searchStarted: true,
+        });
         invalidUrl = false;
         console.log("Playlist to find:", playlistId);
         this.getPlaylist(playlistId);

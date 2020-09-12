@@ -46,14 +46,19 @@ var view = function () {
           handlePlaylistInput={this.handlePlaylistInput.bind(this)}
           invalidUrl={this.state.invalidUrl}
         />
-        {this.state.searchComplete ? (
-          <Playlist
-            trackList={this.state.trackList}
-            playlistInfo={this.state.playlistInfo}
-          />
-        ) : (
-          <PlaylistLoading />
-        )}
+
+        {this.state.searchStarted ? (
+          <div>
+            {this.state.searchComplete ? (
+              <Playlist
+                trackList={this.state.trackList}
+                playlistInfo={this.state.playlistInfo}
+              />
+            ) : (
+              <PlaylistLoading />
+            )}
+          </div>
+        ) : null}
       </Box>
       <Footer />
     </Box>
