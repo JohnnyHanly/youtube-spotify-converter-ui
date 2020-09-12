@@ -11,8 +11,13 @@ class Main extends React.Component {
       playlistId: "",
       trackList: [],
       invalidUrl: false,
-      playlistInfo: {},
-      images:{}
+      playlistInfo: {
+        trackNum: "",
+        ownerName: "",
+        followers: "",
+        name: "",
+        images: {}
+      },
     };
   }
 

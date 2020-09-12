@@ -2,8 +2,7 @@ import Head from "next/head";
 import Link from "next/link";
 import Footer from "./Footer";
 import Searchbar from "./Searchbar";
-import Tracklist from "./Tracklist";
-import PlaylistInfo from "./PlaylistInfo"
+import Playlist from "./Playlist";
 import Navbar from "./Navbar";
 import Button from "@material-ui/core/Button";
 import Container from "@material-ui/core/Container";
@@ -46,9 +45,9 @@ var view = function () {
           handlePlaylistInput={this.handlePlaylistInput.bind(this)}
           invalidUrl={this.state.invalidUrl}
         />
-        <PlaylistInfo playlistInfo = {this.state.playlistInfo}/>
-        <Tracklist
+        <Playlist
           trackList={this.state.trackList}
+          playlistInfo={this.state.playlistInfo}
         />
       </Box>
       <Footer />
