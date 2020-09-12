@@ -11,18 +11,23 @@ class Main extends React.Component {
       playlistId: "",
       trackList: [],
       invalidUrl: false,
+      playlistInfo: {},
     };
   }
 
-  async sendPlaylistId(playlistId) {
+  async getPlaylist(playlistId) {
     const res = await fetch(`${config.proxyURL}/playlist/${playlistId}`);
-    const trackList = await res.json();
-    console.log(trackList);
+    const playlist = await res.json();
     this.setState({
-      trackList: trackList,
+      trackList: playlist.tracks,
+      playlistInfo: {
+        trackNum: playlist.trackNum,
+        ownerName: playlist.owner,
+        followers: playlist.followers,
+        name: playlist.name,
+      },
     });
   }
-
   parsePlaylistUrl(playlistUrl) {
     let invalidUrl = true;
     console.log("Playlist to Parse", playlistUrl);
@@ -34,7 +39,7 @@ class Main extends React.Component {
       if (host === config.host && pathDest == config.playlistPath) {
         invalidUrl = false;
         console.log("Playlist to find:", playlistId);
-        this.sendPlaylistId(playlistId);
+        this.getPlaylist(playlistId);
       }
     }
 

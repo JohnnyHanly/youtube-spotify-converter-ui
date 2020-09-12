@@ -11,7 +11,6 @@ var view = function () {
   const trackList = this.props.trackList;
   return (
     <Box className="div">
-  
       <List className={styles.trackList} dense={false}>
         <Grid container direction="row" justify="flex-start" alignItems="center">
           {trackList.map((x) => (
