@@ -12,6 +12,7 @@ class Main extends React.Component {
       trackList: [],
       invalidUrl: false,
       playlistInfo: {},
+      images:{}
     };
   }
 
@@ -25,6 +26,7 @@ class Main extends React.Component {
         ownerName: playlist.owner,
         followers: playlist.followers,
         name: playlist.name,
+        images: playlist.images[0],
       },
     });
   }
