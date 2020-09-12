@@ -11,10 +11,7 @@ var view = function () {
   const trackList = this.props.trackList;
   return (
     <Box className="div">
-      <Typography variant="h4">
-        Get started by entering a playlist URL below
-      </Typography>
-
+  
       <List className={styles.trackList} dense={false}>
         <Grid container direction="row" justify="flex-start" alignItems="center">
           {trackList.map((x) => (
