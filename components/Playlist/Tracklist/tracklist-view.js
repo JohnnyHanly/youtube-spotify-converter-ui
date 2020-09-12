@@ -3,7 +3,7 @@ import TracklistItem from "./TracklistItem";
 import List from "@material-ui/core/List";
 import Box from "@material-ui/core/Box";
 import Grid from "@material-ui/core/Grid";
-import tracklist from "../../data/trackList";
+import tracklist from "../../../data/trackList";
 import Typography from "@material-ui/core/Typography";
 import styles from "./tracklist.module.css";
 

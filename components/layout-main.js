@@ -16,16 +16,18 @@ class Main extends React.Component {
         ownerName: "",
         followers: "",
         name: "",
-        images: {}
+        images: {},
       },
+      searchComplete: false,
     };
   }
 
   async getPlaylist(playlistId) {
     const res = await fetch(`${config.proxyURL}/playlist/${playlistId}`);
     const playlist = await res.json();
+    var trackList = playlist.tracks.filter((x) => x.track != null);
     this.setState({
-      trackList: playlist.tracks,
+      trackList: trackList,
       playlistInfo: {
         trackNum: playlist.trackNum,
         ownerName: playlist.owner,
@@ -33,6 +35,7 @@ class Main extends React.Component {
         name: playlist.name,
         images: playlist.images[0],
       },
+      searchComplete: true,
     });
   }
   parsePlaylistUrl(playlistUrl) {

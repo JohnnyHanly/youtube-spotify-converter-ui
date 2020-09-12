@@ -18,9 +18,9 @@ const theme = createMuiTheme({
       },
     },
     MuiAvatar: {
-      root: {
-        width: "65px",
-        height: "65px",
+      circle: {
+        width: "70px",
+        height: "70px",
         marginRight:"1.5rem"
       },
     },
