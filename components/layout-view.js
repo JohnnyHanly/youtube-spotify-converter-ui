@@ -3,6 +3,7 @@ import Link from "next/link";
 import Footer from "./Footer";
 import Searchbar from "./Searchbar";
 import Playlist from "./Playlist";
+import PlaylistLoading from "./PlaylistLoading";
 import Navbar from "./Navbar";
 import Button from "@material-ui/core/Button";
 import Container from "@material-ui/core/Container";
@@ -50,7 +51,9 @@ var view = function () {
             trackList={this.state.trackList}
             playlistInfo={this.state.playlistInfo}
           />
-        ) : null}
+        ) : (
+          <PlaylistLoading />
+        )}
       </Box>
       <Footer />
     </Box>

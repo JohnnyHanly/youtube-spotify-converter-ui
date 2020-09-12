@@ -1,7 +1,7 @@
 import React from "react";
 import PlaylistInfoLoading from "./PlaylistInfoLoading";
-import Tracklist from "./Tracklist";
-import styles from "./playlist.module.css";
+import TracklistLoading from "./TracklistLoading"
+import styles from "./playlistLoading.module.css";
 import {
   TextField,
   Typography,
@@ -15,6 +15,7 @@ var view = function () {
   return (
     <Paper elevation={5} className={styles.playlistContainer}>
       <PlaylistInfoLoading  />
+      <TracklistLoading/>
     </Paper>
   );
 };

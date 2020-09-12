@@ -9,9 +9,7 @@
 
 .playlistContainer{
         position: relative;
-        overflow: auto;
-        overflow-x:hidden;
-        width: 97.5vw;
-        max-height: 75vh;
+        overflow: hidden;
+        width: 96vw;
   
 }
