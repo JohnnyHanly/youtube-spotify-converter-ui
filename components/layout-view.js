@@ -8,9 +8,13 @@ import Navbar from "./Navbar";
 import Button from "@material-ui/core/Button";
 import Container from "@material-ui/core/Container";
 import Box from "@material-ui/core/Box";
+import Snackbar from "@material-ui/core/Snackbar";
+import Alert from "@material-ui/lab/Alert";
 import { MuiThemeProvider, StylesProvider } from "@material-ui/core/styles";
 import styles from "./layout.module.css";
 const name = "Your Name";
+const vertical = "top";
+const horizontal = "right";
 export const siteTitle = "Spotify-Youtube Converter";
 
 var view = function () {
@@ -26,9 +30,9 @@ var view = function () {
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
-      <header className="header">
+      {/* <header className="header">
         <Navbar />
-      </header>
+      </header> */}
       <Box className={styles.contentContainer} component="div">
         <Box className={styles.titleContainer}>
           <h1 class="title is-1">
@@ -38,8 +42,19 @@ var view = function () {
           <h3 class="subtitle is-3">
             A simple tool to export Spotify Playlists to Youtube Music
           </h3>
-        </Box>
-
+        </Box>   
+      </Box>
+      <Box className={styles.contentContainer1}>
+      <Snackbar
+          
+          anchorOrigin={{ horizontal, vertical }}
+          open={this.state.error.visible}
+          autoHideDuration={5000}
+          onClose={this.closeErrorAlert.bind(this)}
+        >
+          <Alert variant="filled" severity="error">{this.state.error.errorName}</Alert>
+        </Snackbar>
+        
         <Searchbar
           handleKeyDown={this.handleKeyDown.bind(this)}
           playlistId={this.state.playlistId}

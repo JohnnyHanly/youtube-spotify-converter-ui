@@ -11,6 +11,10 @@ class Main extends React.Component {
       playlistId: "",
       trackList: [],
       invalidUrl: false,
+      error: {
+        errorName: "",
+        visible: false,
+      },
       playlistInfo: {
         trackNum: "",
         ownerName: "",
@@ -18,27 +22,43 @@ class Main extends React.Component {
         name: "",
         images: {},
       },
+    
       searchComplete: false,
       searchStarted: false,
     };
   }
-
   async getPlaylist(playlistId) {
     const res = await fetch(`${config.proxyURL}/playlist/${playlistId}`);
     const playlist = await res.json();
-    var trackList = playlist.tracks.filter((x) => x.track != null);
+    if (!playlist.errorCode) {
+      var trackList = playlist.tracks.filter((x) => x.track != null);
+      this.setState({
+        trackList: trackList,
+        playlistInfo: {
+          trackNum: playlist.trackNum,
+          ownerName: playlist.owner,
+          followers: playlist.followers,
+          name: playlist.name,
+          images: playlist.images[0],
+        },
+      });
+    } else {
+      console.log(playlist.errorName);
+
+      this.setState({
+        error: {
+          errorName: playlist.errorName,
+          visible: true,
+        },
+        searchStarted: false,
+
+      });
+    }
     this.setState({
-      trackList: trackList,
-      playlistInfo: {
-        trackNum: playlist.trackNum,
-        ownerName: playlist.owner,
-        followers: playlist.followers,
-        name: playlist.name,
-        images: playlist.images[0],
-      },
       searchComplete: true,
     });
   }
+
   parsePlaylistUrl(playlistUrl) {
     let invalidUrl = true;
     console.log("Playlist to Parse", playlistUrl);
@@ -61,6 +81,7 @@ class Main extends React.Component {
       invalidUrl: invalidUrl,
     });
   }
+
   handleKeyDown(e) {
     console.log(this.props);
     var playlistId = this.state.playlistId;
@@ -74,6 +95,15 @@ class Main extends React.Component {
     }
   }
 
+  closeErrorAlert() {
+    this.setState({
+      error: {
+        errorName: "",
+        visible: false,
+      },
+    });
+  }
+
   async handlePlaylistInput(e) {
     this.setState({
       playlistId: e.target.value,
@@ -85,6 +115,7 @@ class Main extends React.Component {
       });
     }
   }
+
   render() {
     return ComponentView.bind(this)();
   }

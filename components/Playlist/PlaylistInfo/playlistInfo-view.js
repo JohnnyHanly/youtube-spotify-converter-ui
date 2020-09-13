@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./playlistInfo.module.css";
 import Skeleton from "@material-ui/lab/Skeleton";
+import Fade from "@material-ui/core/Fade"
 import {
   TextField,
   Typography,
@@ -19,15 +20,13 @@ var view = function () {
       <Grid justify="center" alignItems="center" container spacing={4}>
         <Grid container alignItems="center" justify="center" xs={8}>
           <Grid item xs={3}>
-            {playlistInfo ? (
+
               <Avatar
                 style={{ height: "225px", width: "225px" }}
                 variant="square"
                 src={playlistInfo.images.url}
               />
-            ) : (
-              <Skeleton variant="rect" width={225} height={225} />
-            )}
+            
           </Grid>
           <Grid item xs={6} justify="flex-start" container>
             <Grid item xs container direction="column" spacing={2}>

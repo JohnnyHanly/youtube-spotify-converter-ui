@@ -3,6 +3,8 @@ import TracklistItem from "./TracklistItem";
 import List from "@material-ui/core/List";
 import Box from "@material-ui/core/Box";
 import Grid from "@material-ui/core/Grid";
+import Fade from "@material-ui/core/Fade";
+
 import tracklist from "../../../data/trackList";
 import Typography from "@material-ui/core/Typography";
 import styles from "./tracklist.module.css";
@@ -12,13 +14,18 @@ var view = function () {
   return (
     <Box className="div">
       <List className={styles.trackList} dense={false}>
-        <Grid container direction="row" justify="flex-start" alignItems="center">
+        <Grid
+          container
+          direction="row"
+          justify="flex-start"
+          alignItems="center"
+        >
           {trackList.map((x) => (
             <Grid key={x.track.id} item sm={3}>
-              <TracklistItem key={x.track.id}track={x} />
+                <TracklistItem key={x.track.id} track={x} />
             </Grid>
           ))}
-        </Grid> 
+        </Grid>
       </List>
     </Box>
   );

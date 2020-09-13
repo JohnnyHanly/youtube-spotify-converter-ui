@@ -18,7 +18,7 @@ var view = function () {
         >
           {this.state.trackList.map((x) => (
             <Grid key={x} item sm={3}>
-              <TracklistItemLoading key={x} track={x} />
+                <TracklistItemLoading key={x} track={x} />
             </Grid>
           ))}
         </Grid>
