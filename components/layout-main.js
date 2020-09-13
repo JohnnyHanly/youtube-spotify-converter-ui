@@ -28,6 +28,7 @@ class Main extends React.Component {
     };
   }
   async getPlaylist(playlistId) {
+    console.log("KYLES BRANCH")
     const res = await fetch(`${config.proxyURL}/playlist/${playlistId}`);
     const playlist = await res.json();
     if (!playlist.errorCode) {
