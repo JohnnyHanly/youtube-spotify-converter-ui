@@ -11,7 +11,7 @@ import {
 } from "@material-ui/core";
 var view = function () {
   return (
-    <Grid justify="center" alignItems="center" container spacing={4}>
+    <Grid style={{marginTop:'1rem'}} justify="center" alignItems="center" container spacing={4}>
       <Grid container alignItems="center" justify="center" xs={8}>
         <Grid item xs={3}>
           <Skeleton animation="pulse" variant="rect" width={225} height={225} />

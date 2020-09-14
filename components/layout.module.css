@@ -1,22 +1,24 @@
+
 .contentContainer {
-    padding: 0rem 1.5rem 5rem;
-    background-color: red;
-    height: 50vh;
+    padding: 0rem 1.5rem 2rem;
+    background-color: #333 ;
+    height: 40vh;
     overflow: hidden;
   }
   .contentContainer1{
     z-index: 3;
     position: relative;
-    margin:-60px 30px 0px;
+    margin:-50px 30px 3.5rem;
     background-color: #ffffff;
     border-radius: 6px;
     box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
   }
-  .container{
-    /* position: relative;
-    /min-height: 100vh;   */
-  }
   
+  .container{
+  background-color: smoke  !important;
+  min-height:100vh
+
+  }
   .header {
     display: flex;
     flex-direction: column;
@@ -37,6 +39,8 @@
     margin: 3rem 0 0;
   }
   .titleContainer{
-    padding: 2.5rem 1.5rem 1.5rem;
+    padding: 3.5rem 1.5rem 1.75rem;
+    margin-top: 5rem;
+    text-align: center;
   }
   

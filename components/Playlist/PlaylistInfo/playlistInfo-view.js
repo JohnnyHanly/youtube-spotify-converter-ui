@@ -17,7 +17,7 @@ var view = function () {
   const playlistInfo = this.props.playlistInfo;
   return (
     <MuiThemeProvider theme={theme}>
-      <Grid justify="center" alignItems="center" container spacing={4}>
+      <Grid style={{marginTop:'1rem'}} justify="center" alignItems="center" container spacing={4}>
         <Grid container alignItems="center" justify="center" xs={8}>
           <Grid item xs={3}>
 
@@ -46,9 +46,10 @@ var view = function () {
           </Grid>
         </Grid>
         <Grid container xs={4}>
-          <Typography>COck</Typography>
+          <Typography>Progress bar goes here</Typography>
         </Grid>
       </Grid>
+      
     </MuiThemeProvider>
   );
 };

@@ -6,6 +6,7 @@ var view = function () {
   return (
     <Box component="div" className={styles.searchBarContainer}>
       <TextField
+        id="searchBar"
         error={this.props.invalidUrl}
         className={styles.searchBar}
         onChange={(e) => this.props.handlePlaylistInput(e)}
@@ -13,13 +14,11 @@ var view = function () {
         value={this.props.playlistId}
         type="text"
         placeholder="https://open.spotify.com/playlist/37i9dQZF1DWY7IeIP1cdjF"
-        id="outlined-basic"
         label={
           !this.props.invalidUrl
             ? "Enter a Spotify playlist URL"
             : "Must be a valid Spotify URL"
         }
-        variant="outlined"
       />
     </Box>
   );

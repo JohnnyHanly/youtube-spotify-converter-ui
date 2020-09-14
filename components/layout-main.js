@@ -1,12 +1,14 @@
-import React from "react";
+import React, { createRef } from "react";
 import config from "../config";
 import ComponentView from "./layout-view";
 import { stringify } from "querystring";
+import { animateScroll } from "react-scroll";
 var Url = require("url-parse");
 
 class Main extends React.Component {
   constructor(props) {
     super(props);
+    this.node = React.createRef();
     this.state = {
       playlistId: "",
       trackList: [],
@@ -22,10 +24,21 @@ class Main extends React.Component {
         name: "",
         images: {},
       },
-    
+
       searchComplete: false,
       searchStarted: false,
     };
+  }
+  componentDidMount() {
+    this.scrollToBottom();
+  }
+  componentDidUpdate() {
+    this.scrollToBottom();
+  }
+  scrollToBottom() {
+    animateScroll.scrollToBottom({
+      containerId: "playList",
+    });
   }
   async getPlaylist(playlistId) {
     const res = await fetch(`${config.proxyURL}/playlist/${playlistId}`);
@@ -51,7 +64,6 @@ class Main extends React.Component {
           visible: true,
         },
         searchStarted: false,
-
       });
     }
     this.setState({

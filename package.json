@@ -20,6 +20,7 @@
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-perfect-scrollbar": "^1.5.8",
+    "react-scroll": "^1.8.1",
     "sass": "^1.26.10",
     "swr": "^0.3.2",
     "touch": "^3.1.0",

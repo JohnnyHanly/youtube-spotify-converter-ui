@@ -12,6 +12,7 @@ import Snackbar from "@material-ui/core/Snackbar";
 import Alert from "@material-ui/lab/Alert";
 import { MuiThemeProvider, StylesProvider } from "@material-ui/core/styles";
 import styles from "./layout.module.css";
+import { Typography } from "@material-ui/core";
 const name = "Your Name";
 const vertical = "top";
 const horizontal = "right";
@@ -19,7 +20,7 @@ export const siteTitle = "Spotify-Youtube Converter";
 
 var view = function () {
   return (
-    <Box className={styles.container} component="div">
+    <div className={styles.container} component="div">
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta
@@ -35,26 +36,43 @@ var view = function () {
       </header> */}
       <Box className={styles.contentContainer} component="div">
         <Box className={styles.titleContainer}>
-          <h1 class="title is-1">
-            <span style={{ color: "#1db954" }}>Spotify</span>-
-            <span style={{ color: "#e62117" }}>Youtube</span> Converter
-          </h1>
-          <h3 class="subtitle is-3">
+          <Typography variant="h1">
+            <Typography variant="span" style={{ color: "#1db954" }}>
+              Spotify
+            </Typography>
+            <Typography variant="span" style={{ color: "white" }}>
+              -
+            </Typography>
+            <Typography variant="span" style={{ color: "#e62117" }}>
+              Youtube
+            </Typography>
+            <Typography variant="span" style={{ color: "white" }}>
+              {" "}
+              Converter
+            </Typography>
+          </Typography>
+          <Typography
+            variant="h3"
+            style={{ color: "white" }}
+            class="subtitle is-3"
+          >
             A simple tool to export Spotify Playlists to Youtube Music
-          </h3>
-        </Box>   
+          </Typography>
+        </Box>
       </Box>
       <Box className={styles.contentContainer1}>
-      <Snackbar
-          
+        <Snackbar
+          style={{ marginTop: "3rem" }}
           anchorOrigin={{ horizontal, vertical }}
           open={this.state.error.visible}
           autoHideDuration={5000}
           onClose={this.closeErrorAlert.bind(this)}
         >
-          <Alert variant="filled" severity="error">{this.state.error.errorName}</Alert>
+          <Alert variant="filled" severity="error">
+            {this.state.error.errorName}
+          </Alert>
         </Snackbar>
-        
+
         <Searchbar
           handleKeyDown={this.handleKeyDown.bind(this)}
           playlistId={this.state.playlistId}
@@ -65,10 +83,12 @@ var view = function () {
         {this.state.searchStarted ? (
           <div>
             {this.state.searchComplete ? (
-              <Playlist
-                trackList={this.state.trackList}
-                playlistInfo={this.state.playlistInfo}
-              />
+              <div id="playList">
+                <Playlist
+                  trackList={this.state.trackList}
+                  playlistInfo={this.state.playlistInfo}
+                />
+              </div>
             ) : (
               <PlaylistLoading />
             )}
@@ -76,7 +96,7 @@ var view = function () {
         ) : null}
       </Box>
       <Footer />
-    </Box>
+    </div>
   );
 };
 
