@@ -1,11 +1,10 @@
 .footer{
-    background-color: #333;
+    height: 6vh;
+    line-height: 6vh;
+    background-color: #151515;
     position: absolute;
     bottom: 0;
     width: 100%;
-    height: 10vh;
-    line-height: 10vh;
     text-align: center;
-    color:white
 
 }

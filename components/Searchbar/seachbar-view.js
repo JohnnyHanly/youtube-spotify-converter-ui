@@ -8,6 +8,7 @@ var view = function () {
       <TextField
         id="searchBar"
         error={this.props.invalidUrl}
+        
         className={styles.searchBar}
         onChange={(e) => this.props.handlePlaylistInput(e)}
         onKeyDown={(e) => this.props.handleKeyDown(e)}
