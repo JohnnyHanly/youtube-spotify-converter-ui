@@ -9,6 +9,8 @@ import Button from "@material-ui/core/Button";
 import Container from "@material-ui/core/Container";
 import Box from "@material-ui/core/Box";
 import Snackbar from "@material-ui/core/Snackbar";
+import Backdrop from "@material-ui/core/Backdrop";
+import CircularProgress from "@material-ui/core/CircularProgress"
 import Alert from "@material-ui/lab/Alert";
 import { MuiThemeProvider, StylesProvider } from "@material-ui/core/styles";
 import styles from "./layout.module.css";
@@ -94,6 +96,12 @@ var view = function () {
             )}
           </div>
         ) : null}
+        <Backdrop
+          open={this.state.loading}
+          style={{zIndex:10}}
+        >
+          <CircularProgress color="inherit" />
+        </Backdrop>
       </Box>
       <Footer />
     </div>

@@ -36,7 +36,6 @@ class Main extends React.Component {
     this.scrollToBottom();
   }
 
-  
   scrollToBottom() {
     animateScroll.scrollToBottom({
       containerId: "playList",
@@ -70,6 +69,7 @@ class Main extends React.Component {
     }
     this.setState({
       searchComplete: true,
+      loading: false
     });
   }
 
@@ -84,6 +84,7 @@ class Main extends React.Component {
       if (host === config.host && pathDest == config.playlistPath) {
         this.setState({
           searchStarted: true,
+          loading: true,
         });
         invalidUrl = false;
         console.log("Playlist to find:", playlistId);

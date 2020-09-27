@@ -33,15 +33,15 @@ var view = function () {
               />
             </Grid>
             <Grid item xs={6} justify="flex-start" container>
-              <Grid  item xs container direction="column" spacing={2}>
-                <Grid  item xs>
-                  <Typography  gutterBottom variant="h2">
+              <Grid item xs container direction="column" spacing={2}>
+                <Grid item xs>
+                  <Typography gutterBottom variant="h2">
                     {playlistInfo.name}
                   </Typography>
                   <Typography variant="body1" gutterBottom>
                     By {playlistInfo.ownerName}
                   </Typography>
-                  <Typography variant="body2" >
+                  <Typography variant="body2">
                     {playlistInfo.trackNum} Tracks * {playlistInfo.followers}{" "}
                     Followers
                   </Typography>
@@ -49,8 +49,18 @@ var view = function () {
               </Grid>
             </Grid>
           </Grid>
-          <Grid container xs={4}>
-            <Typography>Progress bar goes here</Typography>
+          <Grid  container xs={4}>
+            <Box style={{color:'white'}} display="flex" alignItems="center">
+              <Box width="35rem" mr={1}>
+                <LinearProgress color="secondary" style={{width:'100%'}} variant="determinate" value={34} />
+              </Box>
+              <Box minWidth={35}>
+                <Typography
+                  variant="body2"
+                 
+                >{`${Math.round(50)}%`}</Typography>
+              </Box>
+            </Box>
           </Grid>
         </Grid>
       </Paper>
