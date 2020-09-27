@@ -5,4 +5,5 @@
 .searchBarContainer{
         padding: 1.25rem 1.5rem 1.25rem;    
         background-color:#ffffff;
+        border-radius: 14px;
 }

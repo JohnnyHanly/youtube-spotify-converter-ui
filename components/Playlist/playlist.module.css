@@ -8,10 +8,8 @@
 }
 
 .playlistContainer{
-        position: relative;
-        overflow: auto;
-        overflow-x:hidden;
+       
         width: 97vw;
-        max-height: 75vh;
-      background-color: #ffffff !important;
+        max-height: 83vh;
+        background-color: #ffffff !important;
 }

@@ -17,7 +17,7 @@ var view = function () {
   return (
     <MuiThemeProvider theme={theme}>
 
-    <Box className="div">
+    <Box className={styles.trackListContainer}>
       <List className={styles.trackList} dense={false}>
         <Grid
           container
