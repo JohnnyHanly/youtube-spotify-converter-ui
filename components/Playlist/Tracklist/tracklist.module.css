@@ -1,5 +1,7 @@
 .trackListContainer{
     position: relative;
-    overflow: scroll;
+    overflow: auto;
     overflow-x:hidden;
+    max-height: 65vh;
+
 }

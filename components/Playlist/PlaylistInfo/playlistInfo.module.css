@@ -1,15 +1,17 @@
-.searchBar{
-    width:100%;
-}
 
-.searchBarContainer{
-        padding: 1rem 1.5rem 2rem
-      
-}
 .playListImg{
-    height: 200px;
-    width: 200px;
+    height: 180px;
+    width: 180px;
 }
-.playlistInfoContainer{
-    position: sticky;
+.playListInfoContainer{
+  background-color: #151515;
+  color:white
+
+}
+.avatar{
+    height: 225px;
+     width: 225px;
+}
+.trackFollowers{
+    color:white;
 }

@@ -4,8 +4,8 @@ const theme = createMuiTheme({
   overrides: {
     MuiListItem: {
       gutters: {
-        paddingTop: "20px",
-        paddingBottom: "20px",
+        paddingTop: "15px",
+        paddingBottom: "15px",
       },
     },
     MuiTypography: {

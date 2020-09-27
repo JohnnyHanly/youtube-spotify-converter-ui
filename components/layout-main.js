@@ -35,6 +35,8 @@ class Main extends React.Component {
   componentDidUpdate() {
     this.scrollToBottom();
   }
+
+  
   scrollToBottom() {
     animateScroll.scrollToBottom({
       containerId: "playList",
