@@ -13,7 +13,7 @@ import {
 import { MuiThemeProvider } from "@material-ui/core/styles";
 var view = function () {
   return (
-    <Paper elevation={5} className={styles.playlistContainer}>
+    <Paper className={styles.playlistContainer}>
       <PlaylistInfo playlistInfo={this.props.playlistInfo} />
       <Tracklist trackList={this.props.trackList}></Tracklist>
     </Paper>
