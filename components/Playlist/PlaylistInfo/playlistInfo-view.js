@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./playlistInfo.module.css";
+import LibraryMusicIcon from "@material-ui/icons/LibraryMusic";
 import Skeleton from "@material-ui/lab/Skeleton";
 import Fade from "@material-ui/core/Fade";
 import {
@@ -10,6 +11,7 @@ import {
   Avatar,
   Paper,
   LinearProgress,
+  Button,
 } from "@material-ui/core";
 import { MuiThemeProvider } from "@material-ui/core/styles";
 import theme from "./theme";
@@ -49,19 +51,40 @@ var view = function () {
               </Grid>
             </Grid>
           </Grid>
-          <Grid  container xs={4}>
-            <Box style={{color:'white'}} display="flex" alignItems="center">
-              <Box width="35rem" mr={1}>
-                <LinearProgress color="secondary" style={{width:'100%'}} variant="determinate" value={34} />
+          {this.props.confirmConvert ? (
+            <Grid container xs={4}>
+              <Box
+                style={{ color: "white" }}
+                display="flex"
+                alignItems="center"
+              >
+                <Box width="35rem" mr={1}>
+                  <LinearProgress
+                    color="secondary"
+                    style={{ width: "100%" }}
+                    variant="determinate"
+                    value={34}
+                  />
+                </Box>
+                <Box minWidth={35}>
+                  <Typography variant="body2">{`${Math.round(
+                    50
+                  )}%`}</Typography>
+                </Box>
               </Box>
-              <Box minWidth={35}>
-                <Typography
-                  variant="body2"
-                 
-                >{`${Math.round(50)}%`}</Typography>
-              </Box>
-            </Box>
-          </Grid>
+            </Grid>
+          ) : (
+            <Grid container xs={4}>
+              <Button
+                variant="contained"
+                size="large"
+                
+                startIcon={<LibraryMusicIcon style={{ fontSize: 30 }} />}
+              >
+                Send to your Youtube Music Library
+              </Button>
+            </Grid>
+          )}
         </Grid>
       </Paper>
     </MuiThemeProvider>

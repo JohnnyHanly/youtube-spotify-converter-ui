@@ -9,6 +9,18 @@ const theme = createMuiTheme({
           colorSecondary:{
               backgroundColor:"#99ff99"
           }
+        },
+        MuiButton:{
+          contained:{
+            backgroundColor:'#e62117',
+            color:"white",
+          },
+          containedSizeLarge:{
+            padding:"20px"
+          },
+          label:{
+            fontSize:"16.5px"
+          }
         }
 }});
   

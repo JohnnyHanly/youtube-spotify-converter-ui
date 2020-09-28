@@ -27,15 +27,10 @@ class Main extends React.Component {
 
       searchComplete: false,
       searchStarted: false,
+      confirmConvert: false,
     };
   }
-  componentDidMount() {
-    this.scrollToBottom();
-  }
-  componentDidUpdate() {
-    this.scrollToBottom();
-  }
-
+  
   scrollToBottom() {
     animateScroll.scrollToBottom({
       containerId: "playList",
@@ -69,7 +64,7 @@ class Main extends React.Component {
     }
     this.setState({
       searchComplete: true,
-      loading: false
+      loading: false,
     });
   }
 
@@ -97,6 +92,9 @@ class Main extends React.Component {
     });
   }
 
+  beginConverstion() {
+    console.log("CONVERTING");
+  }
   handleKeyDown(e) {
     console.log(this.props);
     var playlistId = this.state.playlistId;
