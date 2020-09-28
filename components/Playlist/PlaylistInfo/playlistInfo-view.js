@@ -61,9 +61,9 @@ var view = function () {
                 <Box width="35rem" mr={1}>
                   <LinearProgress
                     color="secondary"
-                    style={{ width: "100%" }}
+                    
                     variant="determinate"
-                    value={34}
+                    value={50}
                   />
                 </Box>
                 <Box minWidth={35}>
@@ -78,6 +78,7 @@ var view = function () {
               <Button
                 variant="contained"
                 size="large"
+                onClick={()=> this.props.beginConversion()}
                 
                 startIcon={<LibraryMusicIcon style={{ fontSize: 30 }} />}
               >

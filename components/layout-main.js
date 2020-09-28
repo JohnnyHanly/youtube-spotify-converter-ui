@@ -31,7 +31,7 @@ class Main extends React.Component {
     };
   }
   
-  scrollToBottom() {
+  scrollToBottom() {12
     animateScroll.scrollToBottom({
       containerId: "playList",
     });
@@ -92,8 +92,10 @@ class Main extends React.Component {
     });
   }
 
-  beginConverstion() {
-    console.log("CONVERTING");
+  beginConversion() {
+    this.setState({
+      confirmConvert:true
+    })
   }
   handleKeyDown(e) {
     console.log(this.props);

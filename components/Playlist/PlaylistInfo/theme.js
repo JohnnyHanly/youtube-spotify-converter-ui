@@ -8,7 +8,12 @@ const theme = createMuiTheme({
           },
           colorSecondary:{
               backgroundColor:"#99ff99"
+          },
+          root:{
+            height:"10px",
+            borderRadius:"5px"
           }
+          
         },
         MuiButton:{
           contained:{

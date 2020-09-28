@@ -88,6 +88,7 @@ var view = function () {
               <div id="playList">
                 <Playlist
                   confirmConvert={this.state.confirmConvert}
+                  beginConversion={this.beginConversion.bind(this)}
                   trackList={this.state.trackList}
                   playlistInfo={this.state.playlistInfo}
                 />

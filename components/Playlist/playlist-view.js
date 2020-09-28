@@ -14,7 +14,11 @@ import { MuiThemeProvider } from "@material-ui/core/styles";
 var view = function () {
   return (
     <Paper className={styles.playlistContainer}>
-      <PlaylistInfo playlistInfo={this.props.playlistInfo} />
+      <PlaylistInfo
+        confirmConvert={this.props.confirmConvert}
+        beginConversion={this.props.beginConversion}
+        playlistInfo={this.props.playlistInfo}
+      />
       <Tracklist trackList={this.props.trackList}></Tracklist>
     </Paper>
   );
