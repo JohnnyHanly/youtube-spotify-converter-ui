@@ -23,6 +23,7 @@ class Main extends React.Component {
         followers: "",
         name: "",
         images: {},
+        playlistId:""
       },
 
       searchComplete: false,
@@ -30,8 +31,9 @@ class Main extends React.Component {
       confirmConvert: false,
     };
   }
-  
-  scrollToBottom() {12
+
+  scrollToBottom() {
+    12;
     animateScroll.scrollToBottom({
       containerId: "playList",
     });
@@ -49,6 +51,7 @@ class Main extends React.Component {
           followers: playlist.followers,
           name: playlist.name,
           images: playlist.images[0],
+          playlistId: playlistId,
         },
       });
     } else {
@@ -92,10 +95,14 @@ class Main extends React.Component {
     });
   }
 
-  beginConversion() {
+  async beginConversion() {
     this.setState({
-      confirmConvert:true
-    })
+      confirmConvert: true,
+    });
+    const res = await fetch(
+      `${config.proxyURL}/convert/${this.state.playlistInfo.playlistId}`
+    );
+    const playlist = await res.json();
   }
   handleKeyDown(e) {
     console.log(this.props);
