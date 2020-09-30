@@ -23,7 +23,7 @@ class Main extends React.Component {
         followers: "",
         name: "",
         images: {},
-        playlistId:""
+        playlistId:"         3 "
       },
 
       searchComplete: false,
@@ -33,7 +33,6 @@ class Main extends React.Component {
   }
 
   scrollToBottom() {
-    12;
     animateScroll.scrollToBottom({
       containerId: "playList",
     });
@@ -108,6 +107,11 @@ class Main extends React.Component {
     console.log(this.props);
     var playlistId = this.state.playlistId;
     if (e.key == "Enter" && playlistId) {
+
+      this.setState({
+        searchComplete:false,
+        confirmConvert:false
+      })
       this.parsePlaylistUrl(playlistId);
     }
     if (e.key == "Backspace") {
