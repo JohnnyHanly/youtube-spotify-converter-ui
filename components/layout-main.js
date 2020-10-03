@@ -3,6 +3,7 @@ import config from "../config";
 import ComponentView from "./layout-view";
 import { stringify } from "querystring";
 import { animateScroll } from "react-scroll";
+import { CodeSharp } from "@material-ui/icons";
 var Url = require("url-parse");
 
 class Main extends React.Component {
@@ -23,7 +24,7 @@ class Main extends React.Component {
         followers: "",
         name: "",
         images: {},
-        playlistId:"         3 "
+        playlistId: "         3 ",
       },
 
       searchComplete: false,
@@ -99,19 +100,49 @@ class Main extends React.Component {
       confirmConvert: true,
     });
     const res = await fetch(
-      `${config.proxyURL}/convert/${this.state.playlistInfo.playlistId}`
+      `${config.apiURL}/playlist/convert/${this.state.playlistInfo.playlistId}`
     );
-    const playlist = await res.json();
+    const task = await res.json();
+
+    this.getConversionProgress(task);
+
+    //const playlist = await res.json();
+  }
+
+  async getConversionProgress(task) {
+    console.log( `${config.apiURL}${task.url}`);
+    const res = await fetch(`${config.apiURL}${task.url}`);
+
+    const progress = await res.json();
+    if (progress.state != "PENDING" && progress.state != "PROGRESS") {
+      if (progress.result) {
+        // show result
+        console.log("RES", progress.result);
+      } else {
+        // something unexpected happened
+        console.log("RES", progress.result, progress.state);
+      }
+    } else {
+      // rerun in 2 seconds
+      setTimeout(() => {
+        this.getConversionProgress(task);
+      }, 2000);
+
+      // current: 0
+      // state: "PENDING"
+      // status: "Pending..."
+      // total: 1
+      console.log(progress);
+    }
   }
   handleKeyDown(e) {
     console.log(this.props);
     var playlistId = this.state.playlistId;
     if (e.key == "Enter" && playlistId) {
-
       this.setState({
-        searchComplete:false,
-        confirmConvert:false
-      })
+        searchComplete: false,
+        confirmConvert: false,
+      });
       this.parsePlaylistUrl(playlistId);
     }
     if (e.key == "Backspace") {

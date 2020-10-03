@@ -1,0 +1,48 @@
+ {'added_at': '2020-09-29T05:26:52Z', 'added_by': {'external_urls':
+{'spotify': 'https://open.spotify.com/user/johnny_hanly'}, 'href':
+'https://api.spotify.com/v1/users/johnny_hanly', 'id': 'johnny_hanly', 'type':
+'user', 'uri': 'spotify:user:johnny_hanly'}, 'is_local': False, 'primary_color':
+None, 'track': {'album': {'album_type': 'album', 'artists': [{'external_urls':
+{'spotify': 'https://open.spotify.com/artist/3MZsBdqDrRTJihTHQrO6Dq'}, 'href':
+'https://api.spotify.com/v1/artists/3MZsBdqDrRTJihTHQrO6Dq', 'id':
+'3MZsBdqDrRTJihTHQrO6Dq', 'name': 'Joji', 'type': 'artist', 'uri':
+'spotify:artist:3MZsBdqDrRTJihTHQrO6Dq'}], 'available_markets': ['AD', 'AE',
+'AL', 'AR', 'AT', 'AU', 'BA', 'BE', 'BG', 'BH', 'BO', 'BR', 'BY', 'CA', 'CH',
+'CL', 'CO', 'CR', 'CY', 'CZ', 'DE', 'DK', 'DO', 'DZ', 'EC', 'EE', 'EG', 'ES',
+'FI', 'FR', 'GB', 'GR', 'GT', 'HK', 'HN', 'HR', 'HU', 'ID', 'IE', 'IL', 'IN',
+'IS', 'IT', 'JO', 'JP', 'KW', 'KZ', 'LB', 'LI', 'LT', 'LU', 'LV', 'MA', 'MC',
+'MD', 'ME', 'MK', 'MT', 'MX', 'MY', 'NI', 'NL', 'NO', 'NZ', 'OM', 'PA', 'PE',
+'PH', 'PL', 'PS', 'PT', 'PY', 'QA', 'RO', 'RS', 'RU', 'SA', 'SE', 'SG', 'SI',
+'SK', 'SV', 'TH', 'TN', 'TR', 'TW', 'UA', 'US', 'UY', 'VN', 'XK', 'ZA'],
+'external_urls': {'spotify':
+'https://open.spotify.com/album/5EzDhyNZuO7kuaABHwbBKX'}, 'href':
+'https://api.spotify.com/v1/albums/5EzDhyNZuO7kuaABHwbBKX', 'id':
+'5EzDhyNZuO7kuaABHwbBKX', 'images': [{'height': 640, 'url':
+'https://i.scdn.co/image/ab67616d0000b273282383a07d5db6159cb5daa4', 'width':
+640}, {'height': 300, 'url':
+'https://i.scdn.co/image/ab67616d00001e02282383a07d5db6159cb5daa4', 'width':
+300}, {'height': 64, 'url':
+'https://i.scdn.co/image/ab67616d00004851282383a07d5db6159cb5daa4', 'width':
+64}], 'name': 'Nectar', 'release_date': '2020-09-25', 'release_date_precision':
+'day', 'total_tracks': 18, 'type': 'album', 'uri':
+'spotify:album:5EzDhyNZuO7kuaABHwbBKX'}, 'artists': [{'external_urls':
+{'spotify': 'https://open.spotify.com/artist/3MZsBdqDrRTJihTHQrO6Dq'}, 'href':
+'https://api.spotify.com/v1/artists/3MZsBdqDrRTJihTHQrO6Dq', 'id':
+'3MZsBdqDrRTJihTHQrO6Dq', 'name': 'Joji', 'type': 'artist', 'uri':
+'spotify:artist:3MZsBdqDrRTJihTHQrO6Dq'}], 'available_markets': ['AD', 'AE',
+'AL', 'AR', 'AT', 'AU', 'BA', 'BE', 'BG', 'BH', 'BO', 'BR', 'BY', 'CA', 'CH',
+'CL', 'CO', 'CR', 'CY', 'CZ', 'DE', 'DK', 'DO', 'DZ', 'EC', 'EE', 'EG', 'ES',
+'FI', 'FR', 'GB', 'GR', 'GT', 'HK', 'HN', 'HR', 'HU', 'ID', 'IE', 'IL', 'IN',
+'IS', 'IT', 'JO', 'JP', 'KW', 'KZ', 'LB', 'LI', 'LT', 'LU', 'LV', 'MA', 'MC',
+'MD', 'ME', 'MK', 'MT', 'MX', 'MY', 'NI', 'NL', 'NO', 'NZ', 'OM', 'PA', 'PE',
+'PH', 'PL', 'PS', 'PT', 'PY', 'QA', 'RO', 'RS', 'RU', 'SA', 'SE', 'SG', 'SI',
+'SK', 'SV', 'TH', 'TN', 'TR', 'TW', 'UA', 'US', 'UY', 'VN', 'XK', 'ZA'],
+'disc_number': 1, 'duration_ms': 207710, 'episode': False, 'explicit': False,
+'external_ids': {'isrc': 'ZZOPM2002168'}, 'external_urls': {'spotify':
+'https://open.spotify.com/track/7xcUWyLh6fIMsYjoVI7NnZ'}, 'href':
+'https://api.spotify.com/v1/tracks/7xcUWyLh6fIMsYjoVI7NnZ', 'id':
+'7xcUWyLh6fIMsYjoVI7NnZ', 'is_local': False, 'name': 'Ew', 'popularity': 77,
+'preview_url':
+'https://p.scdn.co/mp3-preview/4595e69ce4b29fc8a46c762cdba30df3de5db755?cid=e33c80008ce149e3be76aa72f7c8df7c',
+'track': True, 'track_number': 1, 'type': 'track', 'uri':
+'spotify:track:7xcUWyLh6fIMsYjoVI7NnZ'}, 'video_thumbnail': {'url': None}}
