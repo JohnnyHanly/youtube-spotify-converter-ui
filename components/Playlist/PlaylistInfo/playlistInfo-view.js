@@ -63,12 +63,12 @@ var view = function () {
                     color="secondary"
                     
                     variant="determinate"
-                    value={50}
+                    value={this.calculateProgress()}
                   />
                 </Box>
                 <Box minWidth={35}>
                   <Typography variant="body2">{`${Math.round(
-                    50
+                    this.calculateProgress()
                   )}%`}</Typography>
                 </Box>
               </Box>

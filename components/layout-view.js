@@ -91,6 +91,8 @@ var view = function () {
                   beginConversion={this.beginConversion.bind(this)}
                   trackList={this.state.trackList}
                   playlistInfo={this.state.playlistInfo}
+                  conversionProgress={this.state.conversionProgress}
+                  
                 />
               </div>
             ) : (

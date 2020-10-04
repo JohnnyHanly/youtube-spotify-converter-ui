@@ -24,9 +24,15 @@ class Main extends React.Component {
         followers: "",
         name: "",
         images: {},
-        playlistId: "         3 ",
+        playlistId: "",
       },
-
+      conversionProgress: {
+        current: 0,
+        state: "",
+        status: "",
+        total: 0,
+        completed: false,
+      },
       searchComplete: false,
       searchStarted: false,
       confirmConvert: false,
@@ -110,7 +116,6 @@ class Main extends React.Component {
   }
 
   async getConversionProgress(task) {
-    console.log( `${config.apiURL}${task.url}`);
     const res = await fetch(`${config.apiURL}${task.url}`);
 
     const progress = await res.json();
@@ -118,6 +123,12 @@ class Main extends React.Component {
       if (progress.result) {
         // show result
         console.log("RES", progress.result);
+        this.setState({
+          conversionProgress: {
+            ...this.state.conversionProgress,
+            completed: true,
+          },
+        });
       } else {
         // something unexpected happened
         console.log("RES", progress.result, progress.state);
@@ -126,13 +137,12 @@ class Main extends React.Component {
       // rerun in 2 seconds
       setTimeout(() => {
         this.getConversionProgress(task);
-      }, 2000);
+      }, 250);
 
-      // current: 0
-      // state: "PENDING"
-      // status: "Pending..."
-      // total: 1
       console.log(progress);
+      this.setState({
+        conversionProgress: progress,
+      });
     }
   }
   handleKeyDown(e) {
