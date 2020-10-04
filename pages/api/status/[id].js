@@ -7,7 +7,7 @@ export default async function playlistHandler(req, res) {
   } = req;
 
 
-  const response = await fetch(`${config.apiURL}/task/${id}`);
+  const response = await fetch(`${config.apiURL}/status/${id}`);
   const json = await response.json();
   
   res.json(json);

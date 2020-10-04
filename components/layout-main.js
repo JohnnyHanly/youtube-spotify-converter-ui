@@ -121,7 +121,7 @@ class Main extends React.Component {
       confirmConvert: true,
     });
     const res = await fetch(
-      `${config.apiURL}/playlist/convert/${this.state.playlistInfo.playlistId}`
+      `${config.proxyURL}/convert/${this.state.playlistInfo.playlistId}`
     );
     const task = await res.json();
 
@@ -129,7 +129,7 @@ class Main extends React.Component {
   }
 
   async getConversionProgress(task) {
-    const res = await fetch(`${config.apiURL}${task.url}`);
+    const res = await fetch(`${config.proxyURL}${task.url}`);
 
     const progress = await res.json();
     if (progress.state != "PENDING" && progress.state != "PROGRESS") {
