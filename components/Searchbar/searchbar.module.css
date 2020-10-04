@@ -1,10 +1,11 @@
 .searchBar{
     width:99%;
     border-radius: 10px;
+    font-size: 30px;
 }
 
 .searchBarContainer{
-        padding: 1.25rem 1.5rem 1.25rem;    
+        padding: 1.5rem 1.5rem 1.5rem;    
         border-radius: 10px !important;
 
 }

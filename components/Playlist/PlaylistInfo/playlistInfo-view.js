@@ -44,7 +44,7 @@ var view = function () {
                     By {playlistInfo.ownerName}
                   </Typography>
                   <Typography variant="body2">
-                    {playlistInfo.trackNum} Tracks * {playlistInfo.followers}{" "}
+                    {playlistInfo.trackNum} Tracks • {playlistInfo.followers}{" "}
                     Followers
                   </Typography>
                 </Grid>

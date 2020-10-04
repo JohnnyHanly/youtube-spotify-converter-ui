@@ -12,7 +12,7 @@ var view = function () {
   const { track } = this.props.track;
   return (
     <MuiThemeProvider theme={theme}>
-      <ListItem divider button>
+      <ListItem divider button  component="a" href={track.external_urls.spotify} target="_blank">
         <ListItemAvatar>
           <Avatar
             src={track.album.images[1].url}
