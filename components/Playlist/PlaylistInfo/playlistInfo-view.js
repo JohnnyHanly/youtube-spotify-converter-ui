@@ -29,6 +29,10 @@ var view = function () {
           <Grid container alignItems="center" justify="center" xs={8}>
             <Grid item xs={3}>
               <Avatar
+                button
+                component="a"
+                href={playlistInfo.playlistUrl}
+                target="_blank"
                 style={{ height: "225px", width: "225px" }}
                 variant="square"
                 src={playlistInfo.images.url}
@@ -38,10 +42,19 @@ var view = function () {
               <Grid item xs container direction="column" spacing={2}>
                 <Grid item xs>
                   <Typography gutterBottom variant="h2">
-                    {playlistInfo.name}
+                    {playlistInfo.name} {" "}
                   </Typography>
-                  <Typography variant="body1" gutterBottom>
-                    By {playlistInfo.ownerName}
+                  <Typography>
+                    By
+                    <Typography
+                      variant="body1"
+                      button 
+                      component="a"
+                      href={playlistInfo.ownerUrl}
+                      target="_blank"
+                    >
+                      {"   " + playlistInfo.ownerName}
+                    </Typography>
                   </Typography>
                   <Typography variant="body2">
                     {playlistInfo.trackNum} Tracks • {playlistInfo.followers}{" "}
@@ -61,7 +74,6 @@ var view = function () {
                 <Box width="35rem" mr={1}>
                   <LinearProgress
                     color="secondary"
-                    
                     variant="determinate"
                     value={this.calculateProgress()}
                   />
@@ -78,8 +90,7 @@ var view = function () {
               <Button
                 variant="contained"
                 size="large"
-                onClick={()=> this.props.beginConversion()}
-                
+                onClick={() => this.props.beginConversion()}
                 startIcon={<LibraryMusicIcon style={{ fontSize: 30 }} />}
               >
                 Send to your Youtube Music Library

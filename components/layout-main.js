@@ -25,6 +25,8 @@ class Main extends React.Component {
         name: "",
         images: {},
         playlistId: "",
+        playlistUrl:"",
+        ownerUrl:""
       },
       conversionProgress: {
         current: 0,
@@ -57,6 +59,7 @@ class Main extends React.Component {
   async getPlaylist(playlistId) {
     const res = await fetch(`${config.proxyURL}/playlist/${playlistId}`);
     const playlist = await res.json();
+    console.log(playlist)
     if (!playlist.errorCode) {
       var trackList = playlist.tracks.filter((x) => x.track != null);
       this.setState({
@@ -68,6 +71,8 @@ class Main extends React.Component {
           name: playlist.name,
           images: playlist.images[0],
           playlistId: playlistId,
+          playlistUrl: playlist.playlistUrl,
+          ownerUrl : playlist.ownerUrl
         },
       });
     } else {
