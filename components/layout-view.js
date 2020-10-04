@@ -10,6 +10,7 @@ import Container from "@material-ui/core/Container";
 import Box from "@material-ui/core/Box";
 import Grid from "@material-ui/core/Grid";
 import Snackbar from "@material-ui/core/Snackbar";
+import Avatar from "@material-ui/core/Avatar";
 import Backdrop from "@material-ui/core/Backdrop";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import Alert from "@material-ui/lab/Alert";
@@ -24,6 +25,7 @@ const horizontal = "right";
 export const siteTitle = "Spotify-Youtube Converter";
 
 var view = function () {
+  const user = this.state.user;
   return (
     <div className={styles.container} component="div">
       <Head>
@@ -54,10 +56,7 @@ var view = function () {
                   buttonText="Login"
                   isSignedIn={true}
                   onSuccess={(e) => {
-                    this.setState({
-                      signedIn: true,
-                    });
-                    console.log("SUCC", e);
+                    this.signInUser(e);
                   }}
                   onFailure={(e) => {
                     console.log("FAILS", e);
@@ -65,7 +64,12 @@ var view = function () {
                   cookiePolicy={"single_host_origin"}
                 />
               ) : (
-                "signed in"
+                <Avatar
+                  className="mt-2"
+                  button
+                  style={{ height: "45px", width: "45px" }}
+                  src={user.imageUrl}
+                />
               )}
             </Grid>
           </Grid>

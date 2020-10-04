@@ -4,6 +4,7 @@ import ComponentView from "./layout-view";
 import { stringify } from "querystring";
 import { animateScroll } from "react-scroll";
 import { CodeSharp } from "@material-ui/icons";
+import { Paper } from "@material-ui/core";
 var Url = require("url-parse");
 
 class Main extends React.Component {
@@ -25,8 +26,8 @@ class Main extends React.Component {
         name: "",
         images: {},
         playlistId: "",
-        playlistUrl:"",
-        ownerUrl:""
+        playlistUrl: "",
+        ownerUrl: "",
       },
       conversionProgress: {
         current: 0,
@@ -48,9 +49,26 @@ class Main extends React.Component {
         task_end_time: "",
         soungCount: 0,
       },
+      signedIn: false,
+      user: {
+        googleId: "",
+        imageUrl: "",
+        email: "",
+      },
     };
   }
 
+  signInUser(e) {
+    console.log("LALAL",e)
+    this.setState({
+      signedIn: true,
+      user:{
+        googleId: e.googleId,
+        imageUrl: e.profileObj.imageUrl,
+        email: e.profileObj.email,
+      }
+    });
+  }
   scrollToBottom() {
     animateScroll.scrollToBottom({
       containerId: "playList",
@@ -59,7 +77,7 @@ class Main extends React.Component {
   async getPlaylist(playlistId) {
     const res = await fetch(`${config.proxyURL}/playlist/${playlistId}`);
     const playlist = await res.json();
-    console.log(playlist)
+    console.log(playlist);
     if (!playlist.errorCode) {
       var trackList = playlist.tracks.filter((x) => x.track != null);
       this.setState({
@@ -72,7 +90,7 @@ class Main extends React.Component {
           images: playlist.images[0],
           playlistId: playlistId,
           playlistUrl: playlist.playlistUrl,
-          ownerUrl : playlist.ownerUrl
+          ownerUrl: playlist.ownerUrl,
         },
       });
     } else {
@@ -141,7 +159,7 @@ class Main extends React.Component {
             ...this.state.conversionProgress,
             completed: true,
           },
-          convertedPlaylist:{
+          convertedPlaylist: {
             id: progress.result.id,
             owner: progress.result.owner,
             name: progress.result.name,
@@ -149,7 +167,6 @@ class Main extends React.Component {
             url: progress.result.url,
             task_end_time: progress.result.task_end_time,
             soungCount: progress.result.soungCount,
-
           },
 
           completionModalVisible: true,
