@@ -10,6 +10,6 @@
 .playlistContainer{
         position: relative;
         overflow: hidden;
-        width: 96vw;
+        width: inherit;
   
 }

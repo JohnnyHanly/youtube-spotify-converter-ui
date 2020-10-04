@@ -5,8 +5,9 @@
 }
 .playListInfoContainer{
   background-color: #151515;
-  color:white
-
+  color:white;
+  width:99%;
+  padding: 1.25rem 1.5rem 1.25rem;  
 }
 .avatar{
     height: 225px;

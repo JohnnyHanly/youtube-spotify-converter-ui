@@ -13,8 +13,10 @@ import Backdrop from "@material-ui/core/Backdrop";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import Alert from "@material-ui/lab/Alert";
 import { MuiThemeProvider, StylesProvider } from "@material-ui/core/styles";
-import styles from "./layout.module.css";
 import { Typography } from "@material-ui/core";
+import { GoogleLogin } from 'react-google-login';
+import styles from "./layout.module.css";
+
 const name = "Your Name";
 const vertical = "top";
 const horizontal = "right";

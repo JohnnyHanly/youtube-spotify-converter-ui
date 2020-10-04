@@ -9,7 +9,7 @@
 
 .playlistContainer{
         
-        width: 97vw;
+        width: inherit;
         max-height: 90vh;
         background-color: #ffffff !important;
-}
+}       
