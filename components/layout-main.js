@@ -130,7 +130,7 @@ class Main extends React.Component {
     if (progress.state != "PENDING" && progress.state != "PROGRESS") {
       if (progress.result) {
         // show result
-        console.log("RES", progress.result);
+        console.log("RES", progress);
         this.setState({
           conversionProgress: {
             ...this.state.conversionProgress,
