@@ -8,13 +8,14 @@ import Navbar from "./Navbar";
 import Button from "@material-ui/core/Button";
 import Container from "@material-ui/core/Container";
 import Box from "@material-ui/core/Box";
+import Grid from "@material-ui/core/Grid";
 import Snackbar from "@material-ui/core/Snackbar";
 import Backdrop from "@material-ui/core/Backdrop";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import Alert from "@material-ui/lab/Alert";
 import { MuiThemeProvider, StylesProvider } from "@material-ui/core/styles";
 import { Typography } from "@material-ui/core";
-import { GoogleLogin } from 'react-google-login';
+import { GoogleLogin } from "react-google-login";
 import styles from "./layout.module.css";
 
 const name = "Your Name";
@@ -39,6 +40,37 @@ var view = function () {
         <Navbar />
       </header> */}
       <Box className={styles.contentContainer} component="div">
+        <Box>
+          <Grid
+            className={styles.playListInfoContainer}
+            direction="row"
+            justify="flex-end"
+            container
+          >
+            <Grid item>
+              {!this.state.signedIn ? (
+                <GoogleLogin
+                  clientId="126648997208-u93102n8u1guuum1e2s1cpvujv8t67dv.apps.googleusercontent.com"
+                  buttonText="Login"
+                  isSignedIn={true}
+                  onSuccess={(e) => {
+                    this.setState({
+                      signedIn: true,
+                    });
+                    console.log("SUCC", e);
+                  }}
+                  onFailure={(e) => {
+                    console.log("FAILS", e);
+                  }}
+                  cookiePolicy={"single_host_origin"}
+                />
+              ) : (
+                "signed in"
+              )}
+            </Grid>
+          </Grid>
+        </Box>
+
         <Box className={styles.titleContainer}>
           <Typography variant="h1">
             <Typography variant="span" style={{ color: "#1db954" }}>
