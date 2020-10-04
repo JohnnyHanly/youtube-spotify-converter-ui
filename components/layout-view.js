@@ -88,11 +88,13 @@ var view = function () {
               <div id="playList">
                 <Playlist
                   confirmConvert={this.state.confirmConvert}
+                  convertedPlaylist={this.state.convertedPlaylist}
                   beginConversion={this.beginConversion.bind(this)}
                   trackList={this.state.trackList}
                   playlistInfo={this.state.playlistInfo}
                   conversionProgress={this.state.conversionProgress}
-                  
+                  completionModalVisible={this.state.completionModalVisible}
+                  handleModal={this.handleModal.bind(this)}
                 />
               </div>
             ) : (

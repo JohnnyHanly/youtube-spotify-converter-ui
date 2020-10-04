@@ -36,6 +36,16 @@ class Main extends React.Component {
       searchComplete: false,
       searchStarted: false,
       confirmConvert: false,
+      completionModalVisible: false,
+      convertedPlaylist: {
+        id: null,
+        owner: "",
+        name: "",
+        trackNum: 0,
+        url: "",
+        task_end_time: "",
+        soungCount: 0,
+      },
     };
   }
 
@@ -111,8 +121,6 @@ class Main extends React.Component {
     const task = await res.json();
 
     this.getConversionProgress(task);
-
-    //const playlist = await res.json();
   }
 
   async getConversionProgress(task) {
@@ -128,6 +136,18 @@ class Main extends React.Component {
             ...this.state.conversionProgress,
             completed: true,
           },
+          convertedPlaylist:{
+            id: progress.result.id,
+            owner: progress.result.owner,
+            name: progress.result.name,
+            trackNum: progress.result.trackNum,
+            url: progress.result.url,
+            task_end_time: progress.result.task_end_time,
+            soungCount: progress.result.soungCount,
+
+          },
+
+          completionModalVisible: true,
         });
       } else {
         // something unexpected happened
@@ -137,13 +157,19 @@ class Main extends React.Component {
       // rerun in 2 seconds
       setTimeout(() => {
         this.getConversionProgress(task);
-      }, 250);
+      }, 750);
 
       console.log(progress);
       this.setState({
         conversionProgress: progress,
       });
     }
+  }
+
+  handleModal() {
+    this.setState({
+      completionModalVisible: !this.state.completionModalVisible,
+    });
   }
   handleKeyDown(e) {
     console.log(this.props);
